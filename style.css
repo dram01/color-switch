@@ -7,6 +7,20 @@ body {
     height: 100vh;
 }
 
+@keyframes colorShift {
+    0% { background: radial-gradient(ellipse at center, #1a0533 0%, #121212 70%); }
+    12%  { background: radial-gradient(ellipse at center, #130a3d 0%, #121212 70%); }
+    25% { background: radial-gradient(ellipse at center, #0d2a4a 0%, #121212 70%); }
+    37%  { background: radial-gradient(ellipse at center, #0d3d1a 0%, #121212 70%); }
+    50% { background: radial-gradient(ellipse at center, #1a3300 0%, #121212 70%); }
+    62%  { background: radial-gradient(ellipse at center, #2a1a00 0%, #121212 70%); }
+    75% { background: radial-gradient(ellipse at center, #33001a 0%, #121212 70%); }
+    87%  { background: radial-gradient(ellipse at center, #28003d 0%, #121212 70%); }
+    100%{ background: radial-gradient(ellipse at center, #1a0533 0%, #121212 70%); }
+}
+
+
+
 #color-switch {
     padding: 12px;
     border-radius: 8px;
@@ -16,15 +30,18 @@ body {
     background: rgba(33, 5, 187);
     color: white;
     cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 #color-switch:hover {
     background: rgba(203, 17, 228, 0.6);
+    box-shadow: 0 0 18px rgba(203,17,228,0.7);
 }
 
 body.dark {
-    background: #121212;
-    color: rgb(0, 0, 0);
+    animation: colorShift 12s ease infinite;
+    background: #070ed9;
+    color: white;
 }
 
 
